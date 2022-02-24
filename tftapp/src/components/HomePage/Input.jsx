@@ -1,8 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
 const Input = (props) => {
     let searchValue = React.createRef();
-    
+    console.log(props);
+
     let getUserData = () => {
 
         let playerName = searchValue.current.value;
@@ -17,7 +19,7 @@ const Input = (props) => {
         <div>
             <input id="summonerName" placeholder={props.searchPlaceholder} ref={searchValue}/>
             <div>
-                <button onClick={getUserData}>Search</button>
+                <button disabled={props.isLoading} onClick={getUserData}>Search</button>
             </div>
         </div>
     )

@@ -3,7 +3,7 @@ import thunkMiddleware from "redux-thunk";
 import homePageReducer from './Reducers/homePageReducer';
 
 let reducers = combineReducers({
-    homePage: homePageReducer
+    homePage: homePageReducer,
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));

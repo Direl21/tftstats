@@ -5,7 +5,7 @@ const instance = axios.create({
     withCredentials: false
 });
 
-const api = "?api_key=RGAPI-6cd33a23-4a8e-41ab-8bb1-fcb177452c39";
+const api = "?api_key=RGAPI-69de09f8-9191-4233-8610-1a9605aa45a6";
 
 export const summonerInfoAPI = {
     getPlayerInfo(playerName) {
