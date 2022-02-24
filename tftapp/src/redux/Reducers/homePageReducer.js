@@ -9,22 +9,22 @@ let initialState = {
     searchInfo: null,
 }
 
-const homePageReducer = (store = initialState, action) => {
+const homePageReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_SEARCH_NAME: {
-            console.log(store.searchName);
+            console.log(state.searchName);
             return {
-                ...store, searchName: action.playerName
+                ...state, searchName: action.playerName
             }
         }
         case SEARCH_PLAYER_INFO: {
-            console.log(store.searchName);
+            console.log(state.searchName);
             return {
-                ...store, searchInfo: action.searchInfo
+                ...state, searchInfo: action.searchInfo
             }
         }
         default: 
-            return store;
+            return state;
     }
 }
 

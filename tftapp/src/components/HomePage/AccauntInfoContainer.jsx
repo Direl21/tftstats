@@ -4,11 +4,11 @@ import Input from './Input';
 import { updateSearchName, searchSammonerInfo } from '../../redux/Reducers/homePageReducer';
 
 
-let mapStateToProps = (store) => {
+let mapStateToProps = (state) => {
     return {
-        homePage: store.homePage,
-        searchName: store.homePage.searchName,
-        searchPlaceholder: store.homePage.searchPlaceholder,
+        homePage: state.homePage,
+        searchName: state.homePage.searchName,
+        searchPlaceholder: state.homePage.searchPlaceholder,
     }
 }
 
