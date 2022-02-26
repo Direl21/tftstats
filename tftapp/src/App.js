@@ -1,12 +1,12 @@
 import './App.css';
-import AccauntInfoContainer from './components/HomePage/AccauntInfoContainer';
+import HomePageContainer from './components/HomePage/HomePageContainer';
 import { BrowserRouter } from 'react-router-dom';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="App">
-        <AccauntInfoContainer />
+        <HomePageContainer />
       </div>
     </BrowserRouter>
   );

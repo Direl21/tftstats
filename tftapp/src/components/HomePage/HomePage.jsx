@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import AccauntInfo from './AccauntInfo/AccauntInfo';
 
-const Input = (props) => {
+const HomePage = (props) => {
     let searchValue = React.createRef();
     console.log(props);
 
@@ -21,8 +21,9 @@ const Input = (props) => {
             <div>
                 <button disabled={props.isLoading} onClick={getUserData}>Search</button>
             </div>
+            <AccauntInfo searchInfo={props.searchInfo}/>
         </div>
     )
 }
 
-export default Input;
+export default HomePage;
