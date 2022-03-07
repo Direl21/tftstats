@@ -1,18 +1,18 @@
 import React from 'react';
-import AccauntInfo from './AccauntInfo/AccauntInfo';
+import AccauntInfo from './Info(accaunt,rank,matches)/AccauntInfo';
+import MatchesInfo from './Info(accaunt,rank,matches)/MatchesInfo';
+import SelectComponent from './SelectComp';
 
 const HomePage = (props) => {
     let searchValue = React.createRef();
     console.log(props);
 
     let getUserData = () => {
-
+        let serverValue = props.serverName;
         let playerName = searchValue.current.value;
         props.updateSearchName(playerName);
-        props.searchSammonerInfo(playerName);
+        props.searchSammonerInfo(playerName, serverValue);
         console.log(props)
-
-        
     }
 
     return (
@@ -21,7 +21,9 @@ const HomePage = (props) => {
             <div>
                 <button disabled={props.isLoading} onClick={getUserData}>Search</button>
             </div>
+            <SelectComponent updateServerName={props.updateServerName}/>
             <AccauntInfo searchInfo={props.searchInfo}/>
+            <MatchesInfo matchesInfo={props.matchesInfo} />
         </div>
     )
 }

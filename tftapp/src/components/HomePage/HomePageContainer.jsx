@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import HomePage from './HomePage';
-import { updateSearchName, searchSammonerInfo, buttonDisabled } from '../../redux/Reducers/homePageReducer';
+import { updateSearchName, searchSammonerInfo, buttonDisabled, updateServerName } from '../../redux/Reducers/homePageReducer';
 
 class HomePageContainer extends React.Component {
     render() {
@@ -13,6 +13,10 @@ class HomePageContainer extends React.Component {
             isLoading={this.props.isLoading}
             searchSammonerInfo={this.props.searchSammonerInfo}
             updateSearchName={this.props.updateSearchName}
+            listMatches={this.props.listMatches}
+            matchesInfo={this.props.matchesInfo}
+            updateServerName={this.props.updateServerName}
+            serverName={this.props.serverName}
             />
         </>
     }
@@ -25,8 +29,12 @@ let mapStateToProps = (state) => {
         searchInfo: state.homePage.searchInfo,
         searchPlaceholder: state.homePage.searchPlaceholder,
         isLoading: state.homePage.isLoading,
-        buttonDisabled: state.homePage.buttonDisabled
+        buttonDisabled: state.homePage.buttonDisabled,
+        listMatches: state.homePage.listMatches,
+        matchesInfo: state.homePage.matchesInfo,
+        serverName: state.homePage.serverName,
+        updateServerName: state.homePage.updateServerName
     }
 }
 
-export default connect(mapStateToProps, {updateSearchName, searchSammonerInfo, buttonDisabled})(HomePageContainer);
+export default connect(mapStateToProps, {updateSearchName, searchSammonerInfo, buttonDisabled, updateServerName})(HomePageContainer);
