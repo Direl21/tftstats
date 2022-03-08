@@ -101,7 +101,7 @@ export const whichServerName = (serverValue) => {
   console.log(url)
 }
 
-const api = "?api_key=RGAPI-82ee94be-06dd-4084-a562-de95198cdc4d";
+const api = "?api_key=API_KEY";
 
 export const summonerInfoAPI = {
     getPlayerInfo(playerName) {
@@ -109,7 +109,7 @@ export const summonerInfoAPI = {
             .then(response => response.data);
     },
     getRankInfo(id) {
-        return instanceEUNE.get(`league/v1/entries/by-summoner/${id}${api}`)
+        return url.get(`league/v1/entries/by-summoner/${id}${api}`)
             .then(response => response.data);
     },
     getMatches(puuid) {

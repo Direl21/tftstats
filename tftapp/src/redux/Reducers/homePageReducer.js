@@ -96,7 +96,7 @@ export const searchSammonerInfo = (playerName, serverValue) => {
     return (dispatch) => {
         dispatch(buttonDisabled(true));
         whichServerName(serverValue);
-        summonerInfoAPI.getPlayerInfo(playerName, serverValue)
+        summonerInfoAPI.getPlayerInfo(playerName)
             .then(data => {
                 dispatch(searchPlayerInfo(data));
                 console.log(data);

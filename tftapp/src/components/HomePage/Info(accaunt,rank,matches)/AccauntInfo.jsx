@@ -2,7 +2,7 @@ import React from 'react';
 
 const AccauntInfo = (props) => {
     if (props.searchInfo === null) {
-        return <div>Nothing</div>
+        return <div></div>
     }
     return (
         <div>

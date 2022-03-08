@@ -6,6 +6,7 @@ import { updateSearchName, searchSammonerInfo, buttonDisabled, updateServerName 
 class HomePageContainer extends React.Component {
     render() {
         return <>
+            
             <HomePage buttonDisabled={this.props.buttonDisabled}
             searchName={this.props.searchName}
             searchInfo={this.props.searchInfo}

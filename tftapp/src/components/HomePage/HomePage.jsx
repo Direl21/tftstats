@@ -1,4 +1,5 @@
 import React from 'react';
+import Preloder from '../common/Preloder';
 import AccauntInfo from './Info(accaunt,rank,matches)/AccauntInfo';
 import MatchesInfo from './Info(accaunt,rank,matches)/MatchesInfo';
 import SelectComponent from './SelectComp';
@@ -23,6 +24,7 @@ const HomePage = (props) => {
             </div>
             <SelectComponent updateServerName={props.updateServerName}/>
             <AccauntInfo searchInfo={props.searchInfo}/>
+            {props.isLoading ? <Preloder /> : null }
             <MatchesInfo matchesInfo={props.matchesInfo} />
         </div>
     )
