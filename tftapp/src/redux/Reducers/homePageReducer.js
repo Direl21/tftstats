@@ -65,10 +65,18 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_MATCHES_INFO:
             {
+                console.log("---------------");
+                console.log("state.matchesInfo");
                 console.log(state.matchesInfo);
+                console.log("---------------");
+                console.log("---------------");
+                console.log("action.matchesInfo");
+                console.log(action.matchesInfo);
+                console.log("---------------");
+
                 return {
                     ...state,
-                    matchesInfo: action.matchesInfo
+                    matchesInfo: [...state.matchesInfo, action.matchesInfo]
                 }
             }
         case UPDATE_SERVER_NAME:
@@ -93,39 +101,23 @@ export const playerMatchesInfo = (matchesInfo) => ({ type: PLAYER_MATCHES_INFO, 
 export const updateServerName = (e) => ({ type: UPDATE_SERVER_NAME, e })
 
 export const searchSammonerInfo = (playerName, serverValue) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(buttonDisabled(true));
         whichServerName(serverValue);
-        summonerInfoAPI.getPlayerInfo(playerName)
-            .then(data => {
-                dispatch(searchPlayerInfo(data));
-                console.log(data);
-                summonerInfoAPI.getRankInfo(data.id)
-                    .then(data => {
-                        dispatch(playerRankInfo(data));
-                        console.log(data);
-                    })
-                summonerInfoAPI.getMatches(data.puuid)
-                    .then(data => {
-                        dispatch(playerListMatches(data));
-                        let row = new Array();
-                        let timer = 1;
-                        data.forEach((item, index) => {
-                            setTimeout(() => {
-                                summonerInfoAPI.getMatchesInfo(item)
-                                    .then(data => {
-                                        row.push(data);
-                                    })
-
-                            }, 500 * index);
-                            timer = 500 * index;
-                        });
-                        setTimeout(() => {
-                            dispatch(playerMatchesInfo(row));
+        const playerData = await summonerInfoAPI.getPlayerInfo(playerName);
+                dispatch(searchPlayerInfo(playerData));
+                console.log(playerData);
+                const rankData = await summonerInfoAPI.getRankInfo(playerData.id)
+                        dispatch(playerRankInfo(rankData));
+                        console.log(rankData);
+                const matchData = await summonerInfoAPI.getMatches(playerData.puuid)
+                        dispatch(playerListMatches(matchData));
+                        for (const id of matchData) {
+                            const oneMatchData = await summonerInfoAPI.getMatchesInfo(id) 
+                            console.log(oneMatchData);
+                            dispatch(playerMatchesInfo(oneMatchData))
                             dispatch(buttonDisabled(false));
-                        }, timer)
-                    })
-            })
+                        }   
     }
 }
 
