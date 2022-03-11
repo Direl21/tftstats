@@ -1,5 +1,6 @@
 import * as axios from 'axios';
 
+//request for player accaunt info
 const instanceEUNE = axios.create({
     baseURL: 'https://eun1.api.riotgames.com/tft/',
     withCredentials: false
@@ -55,9 +56,20 @@ const instanceRU = axios.create({
     withCredentials: false
 });
 
-const instanceMatches = axios.create({
+//request for matches info
+const instanceMatchesEurope = axios.create({
     baseURL: 'https://europe.api.riotgames.com/tft/',
     withCredentials: false
+})
+
+const instanceMatchesAmerican = axios.create({
+  baseURL: 'https://americas.api.riotgames.com/tft/',
+  withCredentials: false
+})
+
+const instanceMatchesAsia = axios.create({
+  baseURL: 'https://asia.api.riotgames.com/tft/',
+  withCredentials: false
 })
 
 let url = '';
@@ -113,11 +125,11 @@ export const summonerInfoAPI = {
             .then(response => response.data);
     },
     getMatches(puuid) {
-        return instanceMatches.get(`match/v1/matches/by-puuid/${puuid}/ids${api}`)
+        return instanceMatchesEurope.get(`match/v1/matches/by-puuid/${puuid}/ids${api}`)
             .then(response => response.data);
     },
     getMatchesInfo(id) {
-        return instanceMatches.get(`match/v1/matches/${id}${api}`)
+        return instanceMatchesEurope.get(`match/v1/matches/${id}${api}`)
             .then(response => response.data);
     }
 }

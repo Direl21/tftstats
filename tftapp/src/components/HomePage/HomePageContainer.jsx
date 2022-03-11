@@ -18,6 +18,7 @@ class HomePageContainer extends React.Component {
             matchesInfo={this.props.matchesInfo}
             updateServerName={this.props.updateServerName}
             serverName={this.props.serverName}
+            rankInfo={this.props.rankInfo}
             />
         </>
     }
@@ -34,7 +35,8 @@ let mapStateToProps = (state) => {
         listMatches: state.homePage.listMatches,
         matchesInfo: state.homePage.matchesInfo,
         serverName: state.homePage.serverName,
-        updateServerName: state.homePage.updateServerName
+        updateServerName: state.homePage.updateServerName,
+        rankInfo: state.homePage.rankInfo,
     }
 }
 

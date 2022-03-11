@@ -49,7 +49,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_RANK_INFO:
             {
-                console.log(state.rankInfo);
+                console.log(action.rankInfo);
                 return {
                     ...state,
                     rankInfo: action.rankInfo

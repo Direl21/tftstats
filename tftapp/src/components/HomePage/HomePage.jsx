@@ -23,9 +23,10 @@ const HomePage = (props) => {
                 <button disabled={props.isLoading} onClick={getUserData}>Search</button>
             </div>
             <SelectComponent updateServerName={props.updateServerName}/>
-            <AccauntInfo searchInfo={props.searchInfo}/>
+            <AccauntInfo searchInfo={props.searchInfo} rankInfo={props.rankInfo}/>
+            
             {props.isLoading ? <Preloder /> : null }
-            <MatchesInfo matchesInfo={props.matchesInfo} />
+            <MatchesInfo matchesInfo={props.matchesInfo}  />
         </div>
     )
 }
