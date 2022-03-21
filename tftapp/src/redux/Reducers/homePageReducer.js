@@ -3,12 +3,10 @@ import { summonerInfoAPI, whichServerName } from '../../API/api';
 const UPDATE_SEARCH_NAME = 'UPDATE_SEARCH_NAME';
 const SEARCH_PLAYER_INFO = 'SEARCH_PLAYER_INFO';
 const BUTTON_IS_DISABLED = 'BUTTON_IS_DISABLED';
-const PLAYER_RANK_INFO = 'PLAYER_RANK_INFO ';
-const PLAYER_LIST_MATCHES = 'PLAYER_LIST_MATCHES ';
-const PLAYER_MATCHES_INFO = 'PLAYER_MATCHES_INFO ';
-const UPDATE_SERVER_NAME = 'UPDATE_SERVER_NAME ';
-
-const timer = ms => new Promise(res => setTimeout(res, ms));
+const PLAYER_RANK_INFO = 'PLAYER_RANK_INFO';
+const PLAYER_LIST_MATCHES = 'PLAYER_LIST_MATCHES';
+const PLAYER_MATCHES_INFO = 'PLAYER_MATCHES_INFO';
+const UPDATE_SERVER_NAME = 'UPDATE_SERVER_NAME';
 
 let initialState = {
     searchName: '',
@@ -18,7 +16,7 @@ let initialState = {
     rankInfo: null,
     serverName: {value: 'eune', label: 'EUNE'},
     listMatches: [],
-    matchesInfo: []
+    matchesInfo: [],
 }
 
 const homePageReducer = (state = initialState, action) => {
@@ -113,9 +111,23 @@ export const searchSammonerInfo = (playerName, serverValue) => {
                 const matchData = await summonerInfoAPI.getMatches(playerData.puuid)
                         dispatch(playerListMatches(matchData));
                         for (const id of matchData) {
-                            const oneMatchData = await summonerInfoAPI.getMatchesInfo(id) 
+                            let oneMatchData = await summonerInfoAPI.getMatchesInfo(id)
+                            for (const puuid of oneMatchData.metadata.participants) {
+                                const playerNameForMatches = await summonerInfoAPI.getPlayerNameByPuuid(puuid)
+                                console.log(playerNameForMatches);
+
+                                oneMatchData.metadata.participants.forEach((puuid2, index) => {
+                                    if (puuid2 === puuid) {
+                                        console.log("pizda");
+                                        oneMatchData.info.participants[index] = Object.assign(playerNameForMatches, oneMatchData.info.participants[index])
+                                        console.log(oneMatchData.info.participants[index]);
+                                    }
+                                })
+                                
+                            }
+                            dispatch(playerMatchesInfo(oneMatchData));
                             console.log(oneMatchData);
-                            dispatch(playerMatchesInfo(oneMatchData))
+                            
                             dispatch(buttonDisabled(false));
                         }   
     }

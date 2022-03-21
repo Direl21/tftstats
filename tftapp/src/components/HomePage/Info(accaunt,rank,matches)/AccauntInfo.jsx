@@ -1,4 +1,6 @@
 import React from 'react';
+import styleName from './AccauntInfo.module.css';
+
 import iron from '../../../assets/ranked-emblems/Emblem_Iron.png'
 import bronze from '../../../assets/ranked-emblems/Emblem_Bronze.png'
 import silver from '../../../assets/ranked-emblems/Emblem_Silver.png'
@@ -15,10 +17,14 @@ const AccauntInfo = (props) => {
         return <div></div>
     }
     return (
-        <div>
-            <div>{props.searchInfo.name}</div>
-            <div>{props.searchInfo.summonerLevel}</div>
-            <img alt='' src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${props.searchInfo.profileIconId}.png`}/>
+        <div className={styleName.profileInfo}>
+            <div className={styleName.profileIconBox}>
+              <img className={styleName.profileIcon} alt='' src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${props.searchInfo.profileIconId}.png`}/>
+              <div className={styleName.profileLvl}>{props.searchInfo.summonerLevel}</div>
+            </div>
+            <div className={styleName.profileDetail}>
+              <div className={styleName.profileName}>{props.searchInfo.name}</div>
+            </div>
             {props.rankInfo.map( (p, index) => {
                 let icon = "";
                 switch (p.tier) {
@@ -50,9 +56,9 @@ const AccauntInfo = (props) => {
                         icon = challenger;
                   }
                 return(
-                    <div  key={index}>
-                        {p.tier}
-                        <img src={icon}/>
+                    <div key={index} className={styleName.profileElo}>
+                        <div className={styleName.profileEloName}>{p.tier}</div>
+                        <img className={styleName.rankIcon} src={icon}/>
                     </div>
                 ) 
                     

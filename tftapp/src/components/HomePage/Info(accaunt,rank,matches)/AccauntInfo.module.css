@@ -1,0 +1,36 @@
+.profileIcon {
+    width: 150px;
+    height: 150px;
+}
+
+.rankIcon {
+    width: 100px;
+    height: 100px;
+}
+
+.profileInfo{
+    display: flex;
+    padding: 25px;
+}
+.profileIconBox{
+    position:relative;
+}
+.profileLvl{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: block;
+    padding: 6px 12px;
+    background: #fff;
+}
+.profileName{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 0 25px;
+}
+.profileElo{
+    text-align: center;
+}
+.profileEloName{
+    display: block;
+}

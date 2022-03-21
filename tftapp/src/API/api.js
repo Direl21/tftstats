@@ -113,7 +113,7 @@ export const whichServerName = (serverValue) => {
   console.log(url)
 }
 
-const api = "?api_key=API_KEY";
+const api = "?api_key=RGAPI-4dff42a0-7c39-40d3-b7c5-6408c0a1a1bd";
 
 export const summonerInfoAPI = {
     getPlayerInfo(playerName) {
@@ -125,11 +125,15 @@ export const summonerInfoAPI = {
             .then(response => response.data);
     },
     getMatches(puuid) {
-        return instanceMatchesEurope.get(`match/v1/matches/by-puuid/${puuid}/ids${api}`)
+        return instanceMatchesEurope.get(`match/v1/matches/by-puuid/${puuid}/ids${api}&count=5`)
             .then(response => response.data);
     },
     getMatchesInfo(id) {
         return instanceMatchesEurope.get(`match/v1/matches/${id}${api}`)
+            .then(response => response.data);
+    },
+    getPlayerNameByPuuid(puuid) {
+      return url.get(`summoner/v1/summoners/by-puuid/${puuid}${api}`)
             .then(response => response.data);
     }
 }

@@ -37,6 +37,7 @@ let mapStateToProps = (state) => {
         serverName: state.homePage.serverName,
         updateServerName: state.homePage.updateServerName,
         rankInfo: state.homePage.rankInfo,
+        puuId: state.homePage.puuId,
     }
 }
 

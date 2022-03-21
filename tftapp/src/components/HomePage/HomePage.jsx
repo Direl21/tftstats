@@ -1,5 +1,6 @@
 import React from 'react';
 import Preloder from '../common/Preloder';
+import './homepega.css';
 import AccauntInfo from './Info(accaunt,rank,matches)/AccauntInfo';
 import MatchesInfo from './Info(accaunt,rank,matches)/MatchesInfo';
 import SelectComponent from './SelectComp';
@@ -18,15 +19,17 @@ const HomePage = (props) => {
 
     return (
         <div>
-            <input id="summonerName" placeholder={props.searchPlaceholder} ref={searchValue}/>
-            <div>
-                <button disabled={props.isLoading} onClick={getUserData}>Search</button>
+            <div className='form'>
+                <input id="summonerName" className="search-input" placeholder={props.searchPlaceholder} ref={searchValue}/>
+                <div>
+                    <button className="search-btn" disabled={props.isLoading} onClick={getUserData}>Search</button>
+                </div>
+                <SelectComponent updateServerName={props.updateServerName}/>
             </div>
-            <SelectComponent updateServerName={props.updateServerName}/>
-            <AccauntInfo searchInfo={props.searchInfo} rankInfo={props.rankInfo}/>
-            
-            {props.isLoading ? <Preloder /> : null }
-            <MatchesInfo matchesInfo={props.matchesInfo}  />
+                <AccauntInfo searchInfo={props.searchInfo} rankInfo={props.rankInfo}/>
+                
+                {props.isLoading ? <Preloder /> : null }
+                <MatchesInfo matchesInfo={props.matchesInfo} puuId={props.puuId} />
         </div>
     )
 }
