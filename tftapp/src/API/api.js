@@ -72,19 +72,20 @@ const instanceMatchesAsia = axios.create({
   withCredentials: false
 })
 
+
+//true server name for select
 let url = '';
 
 export const whichServerName = (serverValue) => {
-  console.log('serverValue '+serverValue)
   switch (serverValue.value) {
     case "eune":
-        url = instanceEUNE;
+      url = instanceEUNE;
       break;
     case "euw":
       url = instanceEUW;
       break;
     case "br":
-       url = instanceBR;
+      url = instanceBR;
       break;
     case "jp":
       url = instanceJP;
@@ -113,6 +114,23 @@ export const whichServerName = (serverValue) => {
   console.log(url)
 }
 
+
+//true global server name for matches
+let globalUrl = '';
+
+export const whichGlobalServerName = (serverValue) => {
+  console.log('serverValue '+serverValue)
+    if (serverValue.value === "eune" || "euw" || "tr" || "ru") {
+      globalUrl = instanceMatchesEurope;
+    } else if (serverValue.value === "na" || "br" || "lan" || "las" || "oce") {
+      globalUrl = instanceMatchesAmerican;
+    } else if (serverValue.value === "kr" || "jp") {
+      globalUrl = instanceMatchesAsia;
+    } else {
+      console.log('error')
+    }
+  console.log(globalUrl)
+}
 const api = "?api_key=RGAPI-4dff42a0-7c39-40d3-b7c5-6408c0a1a1bd";
 
 export const summonerInfoAPI = {
@@ -125,11 +143,11 @@ export const summonerInfoAPI = {
             .then(response => response.data);
     },
     getMatches(puuid) {
-        return instanceMatchesEurope.get(`match/v1/matches/by-puuid/${puuid}/ids${api}&count=5`)
+        return globalUrl.get(`match/v1/matches/by-puuid/${puuid}/ids${api}&count=5`)
             .then(response => response.data);
     },
     getMatchesInfo(id) {
-        return instanceMatchesEurope.get(`match/v1/matches/${id}${api}`)
+        return globalUrl.get(`match/v1/matches/${id}${api}`)
             .then(response => response.data);
     },
     getPlayerNameByPuuid(puuid) {

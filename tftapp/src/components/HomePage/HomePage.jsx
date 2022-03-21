@@ -16,13 +16,18 @@ const HomePage = (props) => {
         props.searchSammonerInfo(playerName, serverValue);
         console.log(props)
     }
-
+    const handleKeypress = e => {
+        //it triggers by pressing the enter key
+      if (e.key === "Enter") {
+        getUserData();
+      }
+    };
     return (
         <div>
             <div className='form'>
-                <input id="summonerName" className="search-input" placeholder={props.searchPlaceholder} ref={searchValue}/>
+                <input id="summonerName" className="search-input" placeholder={props.searchPlaceholder} ref={searchValue} onKeyPress={handleKeypress}/>
                 <div>
-                    <button className="search-btn" disabled={props.isLoading} onClick={getUserData}>Search</button>
+                    <button className="search-btn" disabled={props.isLoading} onClick={getUserData} type="submit">Search</button>
                 </div>
                 <SelectComponent updateServerName={props.updateServerName}/>
             </div>

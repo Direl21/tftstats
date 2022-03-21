@@ -1,4 +1,4 @@
-import { summonerInfoAPI, whichServerName } from '../../API/api';
+import { summonerInfoAPI, whichServerName, whichGlobalServerName } from '../../API/api';
 
 const UPDATE_SEARCH_NAME = 'UPDATE_SEARCH_NAME';
 const SEARCH_PLAYER_INFO = 'SEARCH_PLAYER_INFO';
@@ -102,6 +102,7 @@ export const searchSammonerInfo = (playerName, serverValue) => {
     return async (dispatch) => {
         dispatch(buttonDisabled(true));
         whichServerName(serverValue);
+        whichGlobalServerName(serverValue);
         const playerData = await summonerInfoAPI.getPlayerInfo(playerName);
                 dispatch(searchPlayerInfo(playerData));
                 console.log(playerData);
