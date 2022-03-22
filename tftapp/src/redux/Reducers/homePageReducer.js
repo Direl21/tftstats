@@ -7,6 +7,8 @@ const PLAYER_RANK_INFO = 'PLAYER_RANK_INFO';
 const PLAYER_LIST_MATCHES = 'PLAYER_LIST_MATCHES';
 const PLAYER_MATCHES_INFO = 'PLAYER_MATCHES_INFO';
 const UPDATE_SERVER_NAME = 'UPDATE_SERVER_NAME';
+const PLAYER_MATCHES_INFO_REMOVE = 'PLAYER_MATCHES_INFO_REMOVE';
+
 
 let initialState = {
     searchName: '',
@@ -77,6 +79,13 @@ const homePageReducer = (state = initialState, action) => {
                     matchesInfo: [...state.matchesInfo, action.matchesInfo]
                 }
             }
+        case PLAYER_MATCHES_INFO_REMOVE:
+            {
+                return {
+                    ...state,
+                    matchesInfo: []
+                }
+            }
         case UPDATE_SERVER_NAME:
             {
                 console.log(state.serverName);
@@ -96,6 +105,7 @@ export const buttonDisabled = (isLoading) => ({ type: BUTTON_IS_DISABLED, isLoad
 export const playerRankInfo = (rankInfo) => ({ type: PLAYER_RANK_INFO, rankInfo })
 export const playerListMatches = (listMatches) => ({ type: PLAYER_LIST_MATCHES, listMatches })
 export const playerMatchesInfo = (matchesInfo) => ({ type: PLAYER_MATCHES_INFO, matchesInfo })
+export const playerMatchesInfoRemove = (matchesInfo) => ({ type: PLAYER_MATCHES_INFO_REMOVE, matchesInfo })
 export const updateServerName = (e) => ({ type: UPDATE_SERVER_NAME, e })
 
 export const searchSammonerInfo = (playerName, serverValue) => {
@@ -111,6 +121,7 @@ export const searchSammonerInfo = (playerName, serverValue) => {
                         console.log(rankData);
                 const matchData = await summonerInfoAPI.getMatches(playerData.puuid)
                         dispatch(playerListMatches(matchData));
+                        dispatch(playerMatchesInfoRemove("lol"));
                         for (const id of matchData) {
                             let oneMatchData = await summonerInfoAPI.getMatchesInfo(id)
                             for (const puuid of oneMatchData.metadata.participants) {

@@ -14,7 +14,7 @@ const HomePage = (props) => {
         let playerName = searchValue.current.value;
         props.updateSearchName(playerName);
         props.searchSammonerInfo(playerName, serverValue);
-        console.log(props)
+        searchValue.current.value = "";
     }
     const handleKeypress = e => {
         //it triggers by pressing the enter key

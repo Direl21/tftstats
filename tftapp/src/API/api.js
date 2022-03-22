@@ -120,18 +120,20 @@ let globalUrl = '';
 
 export const whichGlobalServerName = (serverValue) => {
   console.log('serverValue '+serverValue)
-    if (serverValue.value === "eune" || "euw" || "tr" || "ru") {
+    if (serverValue.value === "eune" || serverValue.value === "euw" || serverValue.value === "tr" || serverValue.value === "ru") {
+      console.log('instanceMatchesEurope')
       globalUrl = instanceMatchesEurope;
-    } else if (serverValue.value === "na" || "br" || "lan" || "las" || "oce") {
+    } else if (serverValue.value === "na" || serverValue.value === "br" || serverValue.value === "lan" || serverValue.value === "las" || serverValue.value === "oce") {
+      console.log('instanceMatchesAmerican')
       globalUrl = instanceMatchesAmerican;
-    } else if (serverValue.value === "kr" || "jp") {
+    } else if (serverValue.value === "kr" || serverValue.value === "jp") {
+      console.log('instanceMatchesAsia')
       globalUrl = instanceMatchesAsia;
     } else {
       console.log('error')
     }
-  console.log(globalUrl)
 }
-const api = "?api_key=RGAPI-4dff42a0-7c39-40d3-b7c5-6408c0a1a1bd";
+const api = "?api_key=API_KEY";
 
 export const summonerInfoAPI = {
     getPlayerInfo(playerName) {
@@ -143,7 +145,7 @@ export const summonerInfoAPI = {
             .then(response => response.data);
     },
     getMatches(puuid) {
-        return globalUrl.get(`match/v1/matches/by-puuid/${puuid}/ids${api}&count=5`)
+        return globalUrl.get(`match/v1/matches/by-puuid/${puuid}/ids${api}&count=2`)
             .then(response => response.data);
     },
     getMatchesInfo(id) {
