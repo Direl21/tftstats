@@ -10,11 +10,15 @@ const HomePage = (props) => {
     console.log(props);
 
     let getUserData = () => {
-        let serverValue = props.serverName;
-        let playerName = searchValue.current.value;
-        props.updateSearchName(playerName);
-        props.searchSammonerInfo(playerName, serverValue);
-        searchValue.current.value = "";
+        if (searchValue.current.value === "") {
+            console.log('error')
+        } else {
+            let serverValue = props.serverName;
+            let playerName = searchValue.current.value;
+            props.updateSearchName(playerName);
+            props.searchSammonerInfo(playerName, serverValue);
+            searchValue.current.value = "";
+        }
     }
     const handleKeypress = e => {
         //it triggers by pressing the enter key
