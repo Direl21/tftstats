@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(./assets/images/lol-tft.gif);
+  background-image: url(../src/Assets/images/lol-tft.gif);
   background-size: cover;
 }
 

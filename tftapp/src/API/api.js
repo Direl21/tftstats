@@ -77,7 +77,7 @@ const instanceMatchesAsia = axios.create({
 let url = '';
 
 export const whichServerName = (serverValue) => {
-  switch (serverValue.value) {
+  switch (serverValue) {
     case "eune":
       url = instanceEUNE;
       break;
@@ -120,13 +120,13 @@ let globalUrl = '';
 
 export const whichGlobalServerName = (serverValue) => {
   console.log('serverValue '+serverValue)
-    if (serverValue.value === "eune" || serverValue.value === "euw" || serverValue.value === "tr" || serverValue.value === "ru") {
+    if (serverValue === "eune" || serverValue === "euw" || serverValue === "tr" || serverValue === "ru") {
       console.log('instanceMatchesEurope')
       globalUrl = instanceMatchesEurope;
-    } else if (serverValue.value === "na" || serverValue.value === "br" || serverValue.value === "lan" || serverValue.value === "las" || serverValue.value === "oce") {
+    } else if (serverValue === "na" || serverValue === "br" || serverValue === "lan" || serverValue === "las" || serverValue === "oce") {
       console.log('instanceMatchesAmerican')
       globalUrl = instanceMatchesAmerican;
-    } else if (serverValue.value === "kr" || serverValue.value === "jp") {
+    } else if (serverValue === "kr" || serverValue === "jp") {
       console.log('instanceMatchesAsia')
       globalUrl = instanceMatchesAsia;
     } else {

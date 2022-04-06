@@ -25,7 +25,7 @@ const homePageReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_SEARCH_NAME:
             {
-                console.log(state.searchName);
+                //console.log(state.searchName);
                 return {
                     ...state,
                     searchName: action.playerName
@@ -33,7 +33,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case SEARCH_PLAYER_INFO:
             {
-                console.log(state.searchInfo);
+                //console.log(state.searchInfo);
                 return {
                     ...state,
                     searchInfo: action.searchInfo
@@ -41,7 +41,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case BUTTON_IS_DISABLED:
             {
-                console.log(state.isLoading);
+                //console.log(state.isLoading);
                 return {
                     ...state,
                     isLoading: action.isLoading
@@ -49,7 +49,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_RANK_INFO:
             {
-                console.log(action.rankInfo);
+                //console.log(action.rankInfo);
                 return {
                     ...state,
                     rankInfo: action.rankInfo
@@ -57,7 +57,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_LIST_MATCHES:
             {
-                console.log(state.listMatches);
+                //console.log(state.listMatches);
                 return {
                     ...state,
                     listMatches: action.listMatches
@@ -65,14 +65,14 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_MATCHES_INFO:
             {
-                console.log("---------------");
+                /*console.log("---------------");
                 console.log("state.matchesInfo");
                 console.log(state.matchesInfo);
                 console.log("---------------");
                 console.log("---------------");
                 console.log("action.matchesInfo");
                 console.log(action.matchesInfo);
-                console.log("---------------");
+                console.log("---------------");*/
 
                 return {
                     ...state,
@@ -88,7 +88,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case UPDATE_SERVER_NAME:
             {
-                console.log(state.serverName);
+                //console.log(state.serverName);
                 return {
                     ...state,
                     serverName: action.e
@@ -130,7 +130,7 @@ export const searchSammonerInfo = (playerName, serverValue) => {
 
                                 oneMatchData.metadata.participants.forEach((puuid2, index) => {
                                     if (puuid2 === puuid) {
-                                        console.log("pizda");
+                                        //console.log("it is working");
                                         oneMatchData.info.participants[index] = Object.assign(playerNameForMatches, oneMatchData.info.participants[index])
                                         console.log(oneMatchData.info.participants[index]);
                                     }

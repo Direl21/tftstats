@@ -1,0 +1,26 @@
+.traitsIcon {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    background-repeat: no-repeat;
+}
+
+.traitsIcon img{
+    width: 15px;
+}
+
+.bronze {
+    background-image: url(../../../../Assets/traits/bg/bronze.svg);
+}
+.silver {
+    background-image: url(../../../../Assets/traits/bg/silver.svg);
+}
+.gold {
+    background-image: url(../../../../Assets/traits/bg/gold.svg);
+}
+.chroma {
+    background-image: url(../../../../Assets/traits/bg/chromatic.svg);
+}
+.none {
+    background-image: url(../../../../Assets/traits/bg/chromatic.svg);
+}
