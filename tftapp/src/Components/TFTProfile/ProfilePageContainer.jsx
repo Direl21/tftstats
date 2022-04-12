@@ -8,15 +8,16 @@ import { useParams } from 'react-router-dom';
 //connect component with reducer
 const ProfilePageContainer =  (props) => {
 
-    let { serverValue, playerName } = useParams();
+    let params = useParams();
     //console.log("playerName", playerName);
-    let getUserData =  () => {
-       props.updateSearchName(playerName);
-       props.searchSammonerInfo(playerName, serverValue);
-    }
+    
     useEffect( () => {
+        let getUserData = async () => {
+            await props.updateSearchName(params.playerName);
+            await props.searchSammonerInfo(params.playerName, params.serverValue);
+         };
          getUserData();
-      }, []);
+      }, [params.playerName]);
 
     return <>
 
