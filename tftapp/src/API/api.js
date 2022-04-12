@@ -133,7 +133,7 @@ export const whichGlobalServerName = (serverValue) => {
       console.log('error')
     }
 }
-const api = "?api_key=RGAPI-187d6849-42bc-4d7d-aa65-d92029d2ddad";
+const api = "?api_key=API_KEY";
 
 export const summonerInfoAPI = {
     getPlayerInfo(playerName) {
