@@ -79,21 +79,6 @@ tbody tr:hover {
     padding: 25px;
 }
 
-.champIcon{
-    position: relative;
-    display: inline-block;
-    margin-right: 5px;
-}
-.champIcon::after{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 3px;
-    left: 0;
-    width: 100%;
-    box-shadow: inset 0px 0px 5px 3px black;
-}
-.champIcon img{
-    width: 40px;
+.champCell{
+    display: flex;
 }

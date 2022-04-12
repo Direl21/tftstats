@@ -2,11 +2,13 @@ import React from 'react';
 import styleName from './MatchesInfo.module.css';
 import TraitsContainer from '../Traits/TraitsContainer';
 import ReactTooltip from 'react-tooltip';
-import { Link } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+import Units from '../Units/Units';
 
 //This component renders information about the matches
 //Receives data from riot api (matchesInfo) 
 const MatchesInfo = (props) => {
+    let params = useParams();
     //console.log(props.matchesInfo);
     if(props.matchesInfo != null){
         let list = props.matchesInfo.map((p, index) => {
@@ -48,27 +50,22 @@ const MatchesInfo = (props) => {
                             }
                             console.log("player.traits", player.traits);
                             
+                            const url = "/profile/" + params.serverValue + "/" + player.name
                         return ( 
                             <tr key={index}>
                                 <td>{player.placement}</td>
                                 <td><img className={styleName.profileIcon} alt='' src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${player.profileIconId}.png`}/></td>
                                 <td align="left">{player.level}</td>
                                 <td align="left">
-                                    <Link to="/profile">{player.name}</Link> 
+                                    <NavLink to={url}>{player.name}</NavLink> 
                                 </td>
                                 <td>
                                     <TraitsContainer traitsMas={player.traits}/>
                                 </td>
                                 <td>
-                                    {player.units.map((champion, index) => {
-                                        let champions_names = champion.character_id; //champions names from API
-                                        let champion_name_tooltip = champions_names.split('_').pop(); //remove from string Set6_
-                                        return (
-                                        <span key={index}>
-                                            <span data-tip={`${champion_name_tooltip}`} data-for='tooltipchampname' className={styleName.champIcon}><img alt='' src={`../../../../assets/champions/champ-icon/${champions_names}.png`}/></span>
-                                        </span> 
-                                        )
-                                    })}
+                                    <div className={styleName.champCell}>
+                                        <Units units={player.units}/>
+                                    </div>
                                 </td>
                                 <td>{secondsToMinut(sec)}</td>
                                 
