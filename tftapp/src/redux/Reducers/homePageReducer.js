@@ -8,6 +8,7 @@ const PLAYER_LIST_MATCHES = 'PLAYER_LIST_MATCHES';
 const PLAYER_MATCHES_INFO = 'PLAYER_MATCHES_INFO';
 const UPDATE_SERVER_NAME = 'UPDATE_SERVER_NAME';
 const PLAYER_MATCHES_INFO_REMOVE = 'PLAYER_MATCHES_INFO_REMOVE';
+const SEARCH_PLAYER_INFO_REMOVE = 'SEARCH_PLAYER_INFO_REMOVE';
 
 
 let initialState = {
@@ -39,6 +40,14 @@ const homePageReducer = (state = initialState, action) => {
                     searchInfo: action.searchInfo
                 }
             }
+        case SEARCH_PLAYER_INFO_REMOVE:
+            {
+                //console.log(state.searchInfo);
+                return {
+                    ...state,
+                    searchInfo: null
+                }
+            }
         case BUTTON_IS_DISABLED:
             {
                 //console.log(state.isLoading);
@@ -65,14 +74,14 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_MATCHES_INFO:
             {
-                /*console.log("---------------");
+                //console.log("---------------");
                 console.log("state.matchesInfo");
                 console.log(state.matchesInfo);
-                console.log("---------------");
-                console.log("---------------");
-                console.log("action.matchesInfo");
+                //console.log("---------------");
+                //console.log("---------------");
+                //console.log("action.matchesInfo");
                 console.log(action.matchesInfo);
-                console.log("---------------");*/
+                //console.log("---------------");
 
                 return {
                     ...state,
@@ -101,6 +110,7 @@ const homePageReducer = (state = initialState, action) => {
 
 export const updateSearchName = (playerName) => ({ type: UPDATE_SEARCH_NAME, playerName })
 export const searchPlayerInfo = (searchInfo) => ({ type: SEARCH_PLAYER_INFO, searchInfo })
+export const searchPlayerInfoRemove = (searchInfo) => ({ type: SEARCH_PLAYER_INFO_REMOVE, searchInfo })
 export const buttonDisabled = (isLoading) => ({ type: BUTTON_IS_DISABLED, isLoading })
 export const playerRankInfo = (rankInfo) => ({ type: PLAYER_RANK_INFO, rankInfo })
 export const playerListMatches = (listMatches) => ({ type: PLAYER_LIST_MATCHES, listMatches })
@@ -111,6 +121,7 @@ export const updateServerName = (e) => ({ type: UPDATE_SERVER_NAME, e })
 export const searchSammonerInfo = (playerName, serverValue) => {
     return async (dispatch) => {
         dispatch(buttonDisabled(true));
+        dispatch(searchPlayerInfoRemove());
         whichServerName(serverValue);
         whichGlobalServerName(serverValue);
         const playerData = await summonerInfoAPI.getPlayerInfo(playerName);
