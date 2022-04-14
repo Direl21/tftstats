@@ -1,0 +1,12 @@
+.argumentIcon img{
+    width: 30px;
+}
+
+.argumentIcon{
+    background: #000000;
+    display: inline-block;
+    width: 30px;
+    height:30px;
+    border-radius: 30px;
+    margin-right: 5px;
+}

@@ -1,11 +1,9 @@
 .form{
-    background-color: azure;
     display: flex;
     width:100%;
     justify-items: center;
     justify-content: center;
     align-items: center;
-    padding: 15px;
 }
 
 .search_input{

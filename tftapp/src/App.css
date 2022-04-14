@@ -1,5 +1,8 @@
+body{
+  background: #020206;
+}
 .App {
-  max-width: 1024px;
+  max-width: 1240px;
   margin: 0 auto;
 }
 

@@ -1,7 +1,7 @@
 .champIcon{
     position: relative;
     display: inline-block;
-    width: 40px;
+    width: 50px;
 }
 .champIcon::after{
     content: "";
@@ -14,17 +14,27 @@
     box-shadow: inset 0px 0px 5px 3px black;
 }
 .champIcon img{
-    width: 40px;
+    width: 50px;
 }
 
 .champBox{
-    width: 50px;
+    width: 60px;
     text-align: center;
 }
 
 .itemIcon img{
     width: 15px;
 }
+.tooltipName{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.tooltipItemIcon img{
+    width: 25px;
+}
+
 .itemBox{
     display: inline-flex;
     justify-items: center;

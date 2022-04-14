@@ -11,6 +11,9 @@
 .profileInfo{
     display: flex;
     padding: 25px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.754);
+    border-radius: 15px;
 }
 .profileIconBox{
     position:relative;
