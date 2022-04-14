@@ -367,6 +367,10 @@ const TraitsContainer = (traitsMas) => {
                 if (character.num_units >= 1) {
                     order = 0;
                 }
+                break;
+            default:
+                console.log("error")
+                break
         }
 
         if (order === 0) {

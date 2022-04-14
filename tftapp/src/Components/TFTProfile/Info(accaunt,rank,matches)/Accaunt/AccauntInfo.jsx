@@ -17,8 +17,10 @@ const AccauntInfo = (props) => {
             <div className={styleName.profileDetail}>
               <div className={styleName.profileName}>{props.searchInfo.name}</div>
             </div>
+            
             {props.rankInfo.map( (p, index) => {
                 let icon = "";
+                // TODO must be a function here (this is bad - SWITCH in structure)
                 switch (p.tier) {
                     case "IRON":
                         icon = require("../../../../Assets/ranked-emblems/Emblem_Iron.png");
@@ -46,6 +48,10 @@ const AccauntInfo = (props) => {
                       break;
                     case "CHALLENGER":
                         icon = require("../../../../Assets/ranked-emblems/Emblem_Challenger.png");
+                      break;
+                    default:
+                      console.log("error")
+                      break
                   }
                 return(
                     <div key={index} className={styleName.profileElo}>
