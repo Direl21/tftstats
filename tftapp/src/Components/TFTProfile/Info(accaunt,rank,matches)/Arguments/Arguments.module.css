@@ -10,3 +10,10 @@
     border-radius: 30px;
     margin-right: 5px;
 }
+
+.tooltipName{
+    display: block;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 5px;
+}

@@ -849,7 +849,9 @@ const Arguments = (argument) => {
                 console.log("error")
                 break
         }
-        let argument_tooltip = tooltip + description;
+        let argument_tooltip = `<span class="${styleName.tooltipName}">`+ tooltip + `</span>`;
+        argument_tooltip += `<span key=${index} class="${styleName.tooltipDescription}" >${description}</span>`
+        
         return (
             <span key={index} data-tip={`${argument_tooltip}`} data-for='tooltipargumentname' className={styleName.argumentIcon} >
                 <img alt='' src={`../../../../Assets/arguments/${name}.png`} />

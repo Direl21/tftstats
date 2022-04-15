@@ -85,7 +85,7 @@ const MatchesInfo = (props) => {
             <div>
                 <ReactTooltip id='tooltiptraits' effect='solid' getContent={(dataTip) => `${dataTip}`}></ReactTooltip>
                 <ReactTooltip id='tooltipchampname' html={true} effect='solid' getContent={(dataTip) => `${dataTip}`}></ReactTooltip>
-                <ReactTooltip id='tooltipargumentname' effect='solid' getContent={(dataTip) => `${dataTip}`}></ReactTooltip>
+                <ReactTooltip id='tooltipargumentname' html={true} effect='solid' getContent={(dataTip) => `${dataTip}`}></ReactTooltip>
                 <ReactTooltip id='tooltipitemname' effect='solid' getContent={(dataTip) => `${dataTip}`}></ReactTooltip>
                 {list}
             </div>
