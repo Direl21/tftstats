@@ -133,7 +133,8 @@ export const whichGlobalServerName = (serverValue) => {
       console.log('error')
     }
 }
-const api = "?api_key=API_KEY";
+
+const api = "?api_key=" + process.env.REACT_APP_API_KEY;
 
 export const summonerInfoAPI = {
     getPlayerInfo(playerName) {
