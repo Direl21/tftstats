@@ -13,6 +13,27 @@
     width: 100%;
     box-shadow: inset 0px 0px 5px 3px black;
 }
+
+.grey::after{
+    box-shadow: inset 0px 0px 5px 3px rgb(61, 61, 61);
+}
+
+.green::after{
+    box-shadow: inset 0px 0px 5px 3px rgb(8, 160, 59);
+}
+
+.blue::after{
+    box-shadow: inset 0px 0px 5px 3px rgb(30, 27, 197);
+}
+
+.pink::after{
+    box-shadow: inset 0px 0px 5px 3px rgb(202, 11, 154);
+}
+
+.gold::after{
+    box-shadow: inset 0px 0px 5px 3px rgb(245, 188, 0);
+}
+
 .champIcon img{
     width: 50px;
 }
@@ -22,9 +43,7 @@
     text-align: center;
 }
 
-.itemIcon img{
-    width: 15px;
-}
+
 .tooltipName{
     display: block;
     font-size: 16px;
