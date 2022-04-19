@@ -3,6 +3,8 @@ import styleName from './Arguments.module.css'
 
 const Arguments = (argument) => {
     let argumentsList = argument.argument.map((name, index) => {
+
+        //tooltip's switch for arguments
         let tooltip = "";
         let description = "";
         switch (name) {
@@ -850,6 +852,7 @@ const Arguments = (argument) => {
                 break
         }
         let argument_tooltip = `<span class="${styleName.tooltipName}">`+ tooltip + `</span>`;
+        //doble class and item icon for tooltip
         argument_tooltip += `<span key=${index} class="${styleName.tooltipDescription}" >${description}</span>`
         
         return (

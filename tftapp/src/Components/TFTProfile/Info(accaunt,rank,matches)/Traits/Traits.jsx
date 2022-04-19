@@ -14,7 +14,7 @@ const Traits = (data) => {
     return (
         <span> 
                 {count_traits_units > 0 && 
-                    <span class={styleName.traitsBox}>
+                    <span className={styleName.traitsBox}>
                         <span className={styleName.traitsCount}>{count_traits_units}</span>
                         <span data-tip={`${trait_tooltip}`} data-for='tooltiptraits' className={`${styleName.traitsIcon} ${styleName[class_bg]}`}>
                             <img alt='' src={icon.default}/></span>

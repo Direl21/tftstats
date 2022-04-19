@@ -1,3 +1,4 @@
+import React from 'react';
 import Traits from "./Traits";
 
 const TraitsContainer = (traitsMas) => {
@@ -372,6 +373,8 @@ const TraitsContainer = (traitsMas) => {
                 console.log("error")
                 break
         }
+
+        console.log("icon", icon);
 
         if (order === 0) {
             class_bg = "chroma"
