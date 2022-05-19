@@ -1,8 +1,8 @@
 import React from "react";
-import SelectComponent from "./SelectComp";
+import SelectComponent from "./Select/SelectComponent";
 import styleName from './SearchInput.module.css';
 import { useNavigate} from 'react-router-dom';
-import consoleTool from "../Tools/Console";
+import consoleTool from "../../../utils/Tools/Console";
 
 const SearchInput = (props) => {
     let searchValue = React.createRef();

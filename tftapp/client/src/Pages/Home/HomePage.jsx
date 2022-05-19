@@ -1,9 +1,10 @@
 import React from 'react';
-import SearchInputContainer from '../../Components/Common/SearchInput/SearchInputContainer';
+import SearchInputContainer from '../../components/Common/SearchInput/SearchInputContainer';
 import { Link, Outlet } from 'react-router-dom';
 import styleName from './Homepage.module.css';
-import consoleTool from '../../Components/Common/Tools/Console';
+import consoleTool from '../../utils/Tools/Console';
 
+//This component renders a page that contains some information
 const HomePage = (props) => {
     consoleTool(props)
     return (

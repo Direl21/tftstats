@@ -1,7 +1,6 @@
 import * as axios from 'axios';
-import consoleTool from '../Components/Common/Tools/Console';
 
-//request for player accaunt info
+//request on server
 const server = axios.create({
     baseURL: 'http://localhost:5000/',
     withCredentials: false

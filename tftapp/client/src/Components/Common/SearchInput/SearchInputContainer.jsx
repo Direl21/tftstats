@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { updateServerName} from '../../../Redux/Reducers/homePageReducer';
+import { updateServerName} from '../../../store/Reducers/HomePageReducer';
 import SearchInput from './SearchInput';
 
 const SearchInputContainer = (props) => {

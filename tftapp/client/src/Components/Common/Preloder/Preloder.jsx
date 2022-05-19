@@ -1,5 +1,5 @@
 import React from 'react';
-import preloder from '../../../Assets/preloder.svg';
+import preloder from '../../../assets/preloder.svg';
 
 let Preloder = () => {
     return (
