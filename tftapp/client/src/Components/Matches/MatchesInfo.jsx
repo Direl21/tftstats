@@ -47,7 +47,7 @@ const MatchesInfo = (props) => {
 
                     {p.info.participants.map((player, index) => { //getting data from array
                         //converting a number (from Riot Api) to a convenient time format
-                        const sec = player.time_eliminated;
+                        const sec = player.timeEliminated;
                         const secondsToMinut = (sec) => {
                             var sec_num = parseInt(sec, 10); // don't forget the second param
                                 var minutes = Math.floor(sec_num / 60);

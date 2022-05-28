@@ -7,7 +7,7 @@ import { ArgumentsInfoSwitch } from './Helper/ArgumentsInfoSwitch';
 //Receives data from Riot API (argument) 
 const Arguments = (argument) => {
     //getting data from array
-    let argumentsList = argument.argument.map((name, index) => {
+    let argumentsList = argument.argument[0].map((name, index) => {
         //this function that returns data(tooltip, description) using a switch
         let tooltipData = ArgumentsInfoSwitch(name);
         

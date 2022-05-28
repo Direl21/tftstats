@@ -8,14 +8,14 @@ import consoleTool from '../../../utils/Tools/Console';
 const TraitsContainer = (traitsMas) => {
     //getting data from array
     let traitsList = traitsMas.traitsMas.map((character, index) => {
-
+        consoleTool(traitsMas.traitsMas)
         //sort data from largest to smallest by order, that is defined in the TraitsInfoSwitch
         traitsMas.traitsMas.sort((a, b) => {
             return a.order - b.order;
         });
 
         //function to properly distribute missing data (order, icon, count)
-        let traitsData = TraitsInfoSwitch( character.name, character.num_units);
+        let traitsData = TraitsInfoSwitch( character.name, character.numUnits);
         //function to define the background css class for icon traits
         let background = BackgroundIcon(character.order);
 

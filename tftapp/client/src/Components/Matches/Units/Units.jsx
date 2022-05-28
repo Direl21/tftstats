@@ -12,7 +12,7 @@ const Units = (units) => {
     let unitsList = units.units.map((champion, index) => {
         consoleTool(['units',units.units], 1);
         //champions names from API
-        let champions_names = champion.character_id; 
+        let champions_names = champion.characterId; 
 
         //definition of the first css class for displaying the tooltip(champions name) and remove from string Set6_
         let champion_name_tooltip = `<span class="${styleName.tooltipName}">`+champions_names.split('_').pop() + `</span>`; 
