@@ -1,13 +1,23 @@
 export let doc = (playerData, rankData, matchData, serverValue) => {
     let data = {
-        id: playerData.id,
-        accountId: playerData.accountId,
-        puuid: playerData.puuid,
         name: playerData.name,
-        profileIconId: playerData.profileIconId,
-        revisionDate: playerData.revisionDate,
-        summonerLevel: playerData.summonerLevel,
+        playerData: {
+            id: playerData.id,
+            accountId: playerData.accountId,
+            puuid: playerData.puuid,
+            name: playerData.name,
+            profileIconId: playerData.profileIconId,
+            revisionDate: playerData.revisionDate,
+            summonerLevel: playerData.summonerLevel,
+        },
         rankData: {
+            /*tftTurbo: {
+                gameType: rankData[0].queueType,
+                ratedTier: rankData[0].ratedTier,
+                ratedRating: rankData[0].ratedRating,
+                wins: rankData[0].wins,
+                losses: rankData[0].losses
+            },*/
             gameType: rankData[0].queueType,
             tier: rankData[0].tier,
             rank: rankData[0].rank,

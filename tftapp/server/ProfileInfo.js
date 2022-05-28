@@ -1,11 +1,18 @@
 import mongoose from "mongoose";
 const rankInformation = new mongoose.Schema({
-        gameType: {type: String, required: true},
-        tier: {type: String, required: true},
-        rank: {type: String, required: true},
-        leaguePoints: {type: Number, required: true},
-        wins: {type: Number, required: true},
-        losses: {type: Number, required: true},
+    /*tftTurbo: {
+        gameType: {type: String},
+        ratedTier: {type: String},
+        ratedRating: {type: Number},
+        wins: {type: Number},
+        losses: {type: Number},
+    },*/
+    gameType: {type: String},
+    tier: {type: String},
+    rank: {type: String},
+    leaguePoints: {type: Number},
+    wins: {type: Number},
+    losses: {type: Number},
 });
 
 const traitsInfo = new mongoose.Schema ({
@@ -52,13 +59,16 @@ const ParticipansInfo = new mongoose.Schema ({
 
 
 const ProfileInfo = new mongoose.Schema({
-    id: {type: String, required: true},
-    accountId: {type: String, required: true}, //, unique: true, dropDups: true 
-    puuid: {type: String, required: true}, //, unique: true, dropDups: true 
     name: {type: String, required: true},
-    profileIconId: {type: Number, required: true},
-    revisionDate: {type: Number, required: true},
-    summonerLevel: {type: Number, required: true},
+    playerData: {
+        id: {type: String, required: true},
+        accountId: {type: String, required: true}, //, unique: true, dropDups: true 
+        puuid: {type: String, required: true}, //, unique: true, dropDups: true 
+        name: {type: String, required: true},
+        profileIconId: {type: Number, required: true},
+        revisionDate: {type: Number, required: true},
+        summonerLevel: {type: Number, required: true},
+    },
     rankData:  [rankInformation],
     matchData: {type: Array, required: true},
     oneMatchData: [{
