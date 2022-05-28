@@ -209,7 +209,7 @@ export const ItemNameSwitch = (item) => {
             case 9001:
                 item_name = "Anima Visage";
                 break;
-            case 302:
+            case 9002:
                 item_name = "Death's Defiance";
                 break;
             case 9003:
