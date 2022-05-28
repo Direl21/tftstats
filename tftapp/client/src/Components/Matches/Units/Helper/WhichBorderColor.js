@@ -18,7 +18,7 @@ export const WhichBorderColor = (champion_rarity) => {
         border_color = "blue"
     } else if (champion_rarity === 3) {
         border_color = "pink"
-    } else if (champion_rarity === 4) {
+    } else if (champion_rarity === 5 || champion_rarity === 4) {
         border_color = "gold"
     }
 
