@@ -127,19 +127,19 @@ export const searchSammonerInfo = (playerName, serverValue) => {
         dispatch(searchPlayerInfoRemove());
         
         const data = await playerInfoApi.getPlayerInfo(playerName, serverValue);
-        allProfileInfo = data[0];
-        consoleTool(allProfileInfo, 1)
-        consoleTool(allProfileInfo.playerData);
-            dispatch(searchPlayerInfo(allProfileInfo.playerData));
-            
-            dispatch(playerRankInfo(allProfileInfo.rankData));
-            consoleTool(allProfileInfo.rankData);
+        //allProfileInfo = data[0];
+        //consoleTool(allProfileInfo, 1)
+        //consoleTool(allProfileInfo.docData.playerData);
+            dispatch(searchPlayerInfo(data.playerData));
+            consoleTool(data.playerData, 1);
+            dispatch(playerRankInfo(data.rankData));
+            consoleTool(data.rankData);
     
-            dispatch(playerListMatches(allProfileInfo.matchData));
+            dispatch(playerListMatches(data.matchData));
             dispatch(playerMatchesInfoRemove("lol"));
             
-            dispatch(playerMatchesInfo(allProfileInfo.oneMatchData));
-            consoleTool(allProfileInfo.oneMatchData);
+            dispatch(playerMatchesInfo(data.oneMatchData));
+            consoleTool(data.oneMatchData);
             
             dispatch(buttonDisabled(false));
                          
