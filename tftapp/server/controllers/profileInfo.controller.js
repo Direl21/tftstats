@@ -1,8 +1,8 @@
+import { subDays, format } from "date-fns";
 import { Profile } from "../ProfileInfo.js";
 import { whichServerName, whichGlobalServerName } from "../services/api.js";
 import { doc } from "../db/db.js";
 import { getMatchesData } from "./Helper/profileInfo.helper.js";
-import 'dotenv/config';
 import { updateData } from "./updateData.controller.js";
 import { apiRequest } from "./Helper/apiRequest.helper.js";
 
@@ -41,10 +41,26 @@ export const riotApiRequest =  (req, res) => {
                 }
                 
             } else {
-                let request = await apiRequest(playerName, serverValue);
-                updateData(playerName, serverValue, request);
-                res.json(result);
-                console.log("RESULT:", result)
+                
+                const data = subDays(new Date(), 2);
+                const dataFormat = format(data, 'dd MMMM yyyy HH:mm');
+                const dataFromDbFormat = format(result.updatedTime, 'dd MMMM yyyy HH:mm');
+                console.log('DATATIME:', dataFromDbFormat);
+                console.log('NEWDATATIME:', dataFormat);
+                if (dataFromDbFormat <= dataFormat) {
+                    try{
+                        let request = await apiRequest(playerName, serverValue);
+                        updateData(playerName, serverValue, request);
+                        res.json(result);
+                        console.log("UPDATED_RESULT:", result)
+                    } catch (e) {
+                        console.log(e.message)
+                    }
+                } else {
+                    res.json(result);
+                    console.log("RESULT:", result)
+                }
+                
             }
         }
         
