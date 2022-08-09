@@ -7,10 +7,16 @@ import MatchesInfo from '../../components/Matches/MatchesInfo';
 const ProfilePage = (props) => {
     return (
         <div>
-            <AccauntInfo searchInfo={props.searchInfo} rankInfo={props.rankInfo} />
+            <AccauntInfo searchInfo={props.searchInfo} rankInfo={props.rankInfo} 
+                        sendErrorsOnServer={props.sendErrorsOnServer} 
+                        searchName={props.searchName} serverName={props.serverName}
+            />
 
             {props.isLoading ? <Preloder /> : null}
-            <MatchesInfo matchesInfo={props.matchesInfo} puuId={props.puuId} />
+            <MatchesInfo matchesInfo={props.matchesInfo} puuId={props.puuId} 
+                        sendErrorsOnServer={props.sendErrorsOnServer}
+                        searchName={props.searchName} serverName={props.serverName}
+            />
         </div>
     )
 }

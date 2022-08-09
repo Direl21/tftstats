@@ -100,3 +100,16 @@ export let newUnitsInfo = (oneMatchData, index, index3) => {
     }
     return data
 }
+
+export let errorInfoDB = (queryParams) => {
+    let data = {
+        playerName: queryParams.playerName,
+        serverValue: {
+            value: queryParams.serverValue.value,
+            label: queryParams.serverValue.label
+        },
+        type: queryParams.type,
+        errorData: queryParams.errorData
+    }
+    return data
+}

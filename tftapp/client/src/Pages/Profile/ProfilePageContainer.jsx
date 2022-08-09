@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import {connect} from 'react-redux'
 import ProfilePage from './ProfilePage';
-import { searchSammonerInfo, updateSearchName } from '../../store/Reducers/HomePageReducer';
+import { searchSammonerInfo, updateSearchName, sendErrorsOnServer } from '../../store/Reducers/HomePageReducer';
 
 import { useParams } from 'react-router-dom';
 
@@ -27,6 +27,9 @@ const ProfilePageContainer =  (props) => {
             matchesInfo={props.matchesInfo}
             rankInfo={props.rankInfo}
             puuId={props.puuId}
+            searchName={props.searchName}
+            serverName={props.serverName}
+            sendErrorsOnServer={props.sendErrorsOnServer}
         />
     </>
 }
@@ -42,7 +45,10 @@ let mapStateToProps = (state) => {
         puuId: state.homePage.puuId,
         searchSammonerInfo: state.homePage.searchSammonerInfo,
         updateSearchName: state.homePage.updateSearchName,
+        searchName: state.homePage.searchName,
+        serverName: state.homePage.serverName,
+        sendErrorsOnServer: state.homePage.sendErrorsOnServer,
     }
 }
 
-export default connect(mapStateToProps, { searchSammonerInfo, updateSearchName})(ProfilePageContainer);
+export default connect(mapStateToProps, { searchSammonerInfo, updateSearchName, sendErrorsOnServer })(ProfilePageContainer);

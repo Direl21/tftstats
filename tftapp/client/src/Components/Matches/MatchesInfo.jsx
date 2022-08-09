@@ -9,6 +9,7 @@ import consoleTool from '../../utils/Tools/Console';
 
 //This component renders information about the matches
 //Receives data from Riot API (matchesInfo) 
+
 const MatchesInfo = (props) => {
     //hook
     let params = useParams();
@@ -59,26 +60,38 @@ const MatchesInfo = (props) => {
                             }
 
                             const url = "/profile/" + params.serverValue + "/" + player.name
-
                         //player.placement - the position taken by the player (data from Riot API)
                         //player.level - the number of the level to which the player has reached in the game (data from Riot API)
                         return ( 
                             <tr key={index}>
                                 <td>{player.placement}</td>
-                                <td><img className={styleName.profileIcon} alt='' src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${player.profileIconId}.png`}/></td>
+                                <td>
+                                    <img className={styleName.profileIcon} alt='' 
+                                        src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${player.profileIconId}.png`}
+                                        onError={({ currentTarget }) => {
+                                            currentTarget.onerror = null; // prevents looping
+                                            currentTarget.src=require(`../../assets/penguin.png`);
+
+                                            props.sendErrorsOnServer(props.searchName, props.serverName, 'matchesProfileIcon', player.profileIconId);
+                                        }}
+                                    />
+                                </td>
                                 <td align="left">{player.level}</td>
                                 <td align="left" className={styleName.nameCell} >
                                     <NavLink className={styleName.champLink} to={url}>{player.name}</NavLink> 
                                 </td>
                                 <td > 
-                                    <Arguments argument={player.augments}/>
+                                    <Arguments argument={player.augments} sendErrorsOnServer={props.sendErrorsOnServer}
+                                            searchName={props.searchName} serverName={props.serverName}/>
                                 </td>
                                 <td>
-                                    <TraitsContainer traitsMas={player.traits}/>
+                                    <TraitsContainer traitsMas={player.traits} sendErrorsOnServer={props.sendErrorsOnServer}
+                                            searchName={props.searchName} serverName={props.serverName}/>
                                 </td>
                                 <td>
                                     <div className={styleName.champCell}>
-                                        <Units units={player.units}/>
+                                        <Units units={player.units} sendErrorsOnServer={props.sendErrorsOnServer}
+                                            searchName={props.searchName} serverName={props.serverName}/>
                                     </div>
                                 </td>
                                 <td>{secondsToMinut(sec)}</td>

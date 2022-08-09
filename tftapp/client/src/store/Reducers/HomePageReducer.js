@@ -1,4 +1,4 @@
-import { playerInfoApi} from '../../api/api';
+import { playerInfoApi, sendErrorApi} from '../../api/api';
 import consoleTool from '../../utils/Tools/Console';
 
 const UPDATE_SEARCH_NAME = 'UPDATE_SEARCH_NAME';
@@ -10,6 +10,8 @@ const PLAYER_MATCHES_INFO = 'PLAYER_MATCHES_INFO';
 const UPDATE_SERVER_NAME = 'UPDATE_SERVER_NAME';
 const PLAYER_MATCHES_INFO_REMOVE = 'PLAYER_MATCHES_INFO_REMOVE';
 const SEARCH_PLAYER_INFO_REMOVE = 'SEARCH_PLAYER_INFO_REMOVE';
+const ERROR_ACCOUNT_ICON = 'ERROR_ACCOUNT_ICON';
+const ERROR_TYPE = 'ERROR_TYPE';
 
 
 let initialState = {
@@ -21,6 +23,8 @@ let initialState = {
     serverName: {value: 'eune', label: 'EUNE'},
     listMatches: [],
     matchesInfo: [],
+    errorData: '',
+    type: '',
 }
 
 const homePageReducer = (state = initialState, action) => {
@@ -67,7 +71,7 @@ const homePageReducer = (state = initialState, action) => {
             }
         case PLAYER_LIST_MATCHES:
             {
-                //consoleTool(state.listMatches);
+                console.log(state.listMatches);
                 return {
                     ...state,
                     listMatches: action.listMatches
@@ -104,6 +108,22 @@ const homePageReducer = (state = initialState, action) => {
                     serverName: action.e
                 }
             }
+        //case ERROR_ACCOUNT_ICON:
+        //    {
+        //        console.log(state.errorData);
+        //       return {
+        //            ...state,
+        //            errorData: action.errorData
+        //        }
+        //    }
+        //case ERROR_TYPE:
+        //    {
+        //        console.log(state.type);
+        //        return {
+        //            ...state,
+        //            type: action.type
+        //        }
+        //    }
         default:
             return state;
     }
@@ -118,10 +138,12 @@ export const playerListMatches = (listMatches) => ({ type: PLAYER_LIST_MATCHES, 
 export const playerMatchesInfo = (matchesInfo) => ({ type: PLAYER_MATCHES_INFO, matchesInfo })
 export const playerMatchesInfoRemove = (matchesInfo) => ({ type: PLAYER_MATCHES_INFO_REMOVE, matchesInfo })
 export const updateServerName = (e) => ({ type: UPDATE_SERVER_NAME, e })
+//export const errorAccountIcon = (errorData) => ({ type: ERROR_ACCOUNT_ICON, errorData })
+//export const errorType = (type) => ({ type: ERROR_TYPE, type})
 
 export const searchSammonerInfo = (playerName, serverValue) => {
     return async (dispatch) => {
-        let allProfileInfo;
+        //let allProfileInfo;
 
         dispatch(buttonDisabled(true));
         dispatch(searchPlayerInfoRemove());
@@ -141,8 +163,17 @@ export const searchSammonerInfo = (playerName, serverValue) => {
             dispatch(playerMatchesInfo(data.oneMatchData));
             consoleTool(data.oneMatchData);
             
-            dispatch(buttonDisabled(false));
-                         
+            
+            dispatch(buttonDisabled(false));     
+    }
+}
+
+export const sendErrorsOnServer = (playerName, serverValue, type, errorData) => {
+    return async (dispatch) => {
+        const errorInfo = await sendErrorApi.sendError(playerName, serverValue, type, errorData)
+            //dispatch(errorAccountIcon(errorInfo.errorData));
+
+            //dispatch(errorType(errorInfo.type));
     }
 }
 

@@ -14,8 +14,9 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
     let count_traits_units = 0; 
         
         switch (character_name) {
+            //SET6
             case 'Set6_Arcanist':
-                icon = require("../../../../assets/traits/Arcanist.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Arcanist.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -30,7 +31,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Assassin':
-                icon = require("../../../../assets/traits/Assassin.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Assassin.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -43,7 +44,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Bodyguard':
-                icon = require("../../../../assets/traits/Bodyguard.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Bodyguard.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -58,7 +59,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Bruiser':
-                icon = require("../../../../assets/traits/Bruiser.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Bruiser.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -73,7 +74,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Clockwork':
-                icon = require("../../../../assets/traits/Clockwork.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Clockwork.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -86,7 +87,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Colossus':
-                icon = require("../../../../assets/traits/Colossus.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Colossus.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -95,7 +96,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Debonair':
-                icon = require("../../../../assets/traits/Debonair.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Debonair.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -108,7 +109,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Enforcer':
-                icon = require("../../../../assets/traits/Enforcer.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Enforcer.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -117,7 +118,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Enchanter':
-                icon = require("../../../../assets/traits/Enchanter.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Enchanter.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -132,7 +133,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Glutton':
-                icon = require("../../../../assets/traits/Glutton.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Glutton.svg`;
                 if (num_units > 0) {
                     count_traits_units = num_units
                 }
@@ -141,7 +142,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Hextech':
-                icon = require("../../../../assets/traits/Hextech.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Hextech.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -156,7 +157,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Challenger':
-                icon = require("../../../../assets/traits/Challenger.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Challenger.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -171,7 +172,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Chemtech':
-                icon = require("../../../../assets/traits/Chemtech.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Chemtech.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -186,7 +187,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Innovator':
-                icon = require("../../../../assets/traits/Innovator.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Innovator.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -199,7 +200,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Mastermind':
-                icon = require("../../../../assets/traits/Mastermind.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Mastermind.svg`;
                 if (num_units > 0) {
                     count_traits_units = num_units
                 }
@@ -208,7 +209,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Mercenary':
-                icon = require("../../../../assets/traits/Mercenary.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Mercenary.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -221,7 +222,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Mutant':
-                icon = require("../../../../assets/traits/Mutant.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Mutant.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -234,7 +235,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Rivals':
-                icon = require("../../../../assets/traits/Rival.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Rival.svg`;
                 if (num_units > 0) {
                     count_traits_units = num_units
                 }
@@ -243,7 +244,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Scrap':
-                icon = require("../../../../assets/traits/Scrap.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Scrap.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -256,7 +257,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Scholar':
-                icon = require("../../../../assets/traits/Scholar.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Scholar.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -269,7 +270,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Sniper':
-                icon = require("../../../../assets/traits/Sniper.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Sniper.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -282,7 +283,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Socialite':
-                icon = require("../../../../assets/traits/Socialite.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Socialite.svg`;
                 if (num_units > 0) {
                     count_traits_units = num_units
                 }
@@ -297,7 +298,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Striker':
-                icon = require("../../../../assets/traits/Striker.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Striker.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -310,7 +311,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Syndicate':
-                icon = require("../../../../assets/traits/Syndicate.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Syndicate.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -323,7 +324,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Transformer':
-                icon = require("../../../../assets/traits/Transformer.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Transformer.svg`;
                 if (num_units > 0) {
                     count_traits_units = num_units
                 }
@@ -332,7 +333,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Twinshot':
-                icon = require("../../../../assets/traits/Twinshot.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Twinshot.svg`;
                 if (num_units > 1) {
                     count_traits_units = num_units
                 }
@@ -347,7 +348,7 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_Yordle':
-                icon = require("../../../../assets/traits/Yordle.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Yordle.svg`;
                 if (num_units > 2) {
                     count_traits_units = num_units
                 }
@@ -358,12 +359,383 @@ export const TraitsInfoSwitch = (character_name, num_units) => {
                 }
                 break;
             case 'Set6_YordleLord':
-                icon = require("../../../../assets/traits/Yordlelord.svg");
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set6_Yordlelord.svg`;
                 if (num_units > 0) {
                     count_traits_units = num_units
                 }
                 if (num_units >= 1) {
                     order = 0;
+                }
+                break;
+            //SET7
+            case 'Set7_Assassin':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Assassin.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Astral':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Astral.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 9) {
+                    order = 0;
+                } else if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Bard':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Bard.svg`;
+                if (num_units > 0) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 1) {
+                    order = 0;
+                }
+                break;
+            case 'Set7_Bruiser':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Bruiser.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 8) {
+                    order = 0;
+                } else if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 4) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Cannoneer':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Cannoneer.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 5) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Cavalier':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Cavalier.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 5) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Dragonmancer':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Dragonmancer.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 9) {
+                    order = 0;
+                } else if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Dragons':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Dragons.svg`;
+                if (num_units > 0) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 2) {
+                    order = 0;
+                } else if (num_units >= 1) {
+                    order = 1;
+                }
+                break;
+            case 'Set7_Evoker':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Evoker.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Guardian':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Guardian.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Guild':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Guild.svg`;
+                if (num_units > 0) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 5) {
+                    order = 1;
+                } else if (num_units >= 4) {
+                    order = 2;
+                } else if (num_units >= 3) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                } else if (num_units >= 1) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Jade':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Jade.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 12) {
+                    order = 0;
+                } else if (num_units >= 9) {
+                    order = 1;
+                } else if (num_units >= 6) {
+                    order = 2;
+                } else if (num_units >= 3) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Legend':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Legend.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 3) {
+                    order = 1;
+                }
+                break;
+            case 'Set7_Mage':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Mage.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 9) {
+                    order = 0;
+                } else if (num_units >= 7) {
+                    order = 1;
+                } else if (num_units >= 5) {
+                    order = 2;
+                } else if (num_units >= 3) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Mirage':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Mirage.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Mystic':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Mystic.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 5) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Ragewing':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Ragewing.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 9) {
+                    order = 0;
+                } else if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Revel':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Revel.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 5) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 3) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Scalescorn':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Scalescorn.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Shapeshifter':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Shapeshifter.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 4) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Shimmerscale':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Shimmerscale.svg`;
+                if (num_units > 2) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 9) {
+                    order = 0;
+                } else if (num_units >= 7) {
+                    order = 1;
+                } else if (num_units >= 5) {
+                    order = 2;
+                } else if (num_units >= 3) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Spellthief':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Spellthief.svg`;
+                if (num_units > 0) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 1) {
+                    order = 1;
+                }
+                break;
+            case 'Set7_Starcaller':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Starcaller.svg`;
+                if (num_units > 0) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 1) {
+                    order = 1;
+                } 
+                break;
+            case 'Set7_Swiftshot':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Swiftshot.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Tempest':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Tempest.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 8) {
+                    order = 0;
+                } else if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 4) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Trainer':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Trainer.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 3) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                } 
+                break;
+            case 'Set7_Warrior':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Warrior.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 6) {
+                    order = 0;
+                } else if (num_units >= 4) {
+                    order = 1;
+                } else if (num_units >= 2) {
+                    order = 3;
+                }
+                break;
+            case 'Set7_Whispers':
+                icon = process.env.REACT_APP_DATA_PATH + `/traits/Set7_Whispers.svg`;
+                if (num_units > 1) {
+                    count_traits_units = num_units
+                }
+                if (num_units >= 8) {
+                    order = 0;
+                } else if (num_units >= 6) {
+                    order = 1;
+                } else if (num_units >= 4) {
+                    order = 2;
+                } else if (num_units >= 2) {
+                    order = 3;
                 }
                 break;
             default:

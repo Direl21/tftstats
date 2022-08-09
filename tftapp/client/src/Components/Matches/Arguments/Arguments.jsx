@@ -5,9 +5,11 @@ import { ArgumentsInfoSwitch } from './Helper/ArgumentsInfoSwitch';
 
 //This component renders information about the arguments
 //Receives data from Riot API (argument) 
-const Arguments = (argument) => {
+const Arguments = (props) => {
+
     //getting data from array
-    let argumentsList = argument.argument[0].map((name, index) => {
+    let argumentsList = props.argument[0].map((name, index) => {
+        //consoleTool(['argument', argument.argument], 1);
         //this function that returns data(tooltip, description) using a switch
         let tooltipData = ArgumentsInfoSwitch(name);
         
@@ -18,7 +20,17 @@ const Arguments = (argument) => {
         
         return (
             <span key={index} data-tip={`${argument_tooltip}`} data-for='tooltipargumentname' className={styleName.argumentIcon} >
-                <img alt='' src={require(`../../../assets/arguments/${name}.png`)} />
+                
+                <img alt='' 
+                    src={process.env.REACT_APP_DATA_PATH + `arguments/${name}.png`}
+                    onError={({ currentTarget }) => {
+                        console.log('ARGUMENT IM HEREEEEE')
+                        currentTarget.onerror = null; // prevents looping
+                        currentTarget.src=require(`../../../assets/penguin.png`);
+
+                        props.sendErrorsOnServer(props.searchName, props.serverName, 'argumentIcon', name)
+                    }}
+                />
             </span>
         )
     })

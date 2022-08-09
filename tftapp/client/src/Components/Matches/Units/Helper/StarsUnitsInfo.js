@@ -8,6 +8,9 @@ import styleName from '../Units.module.css';
 
 export const StarsUnitsInfo = (champion_tier, champion_rarity) => {
     let stars = <span><ion-icon ></ion-icon></span>;
+        let starsOne = <span>
+            <ion-icon name="star"></ion-icon>
+        </span>
         let starsTwo = <span>
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
@@ -17,7 +20,34 @@ export const StarsUnitsInfo = (champion_tier, champion_rarity) => {
                             <ion-icon name="star"></ion-icon>
                             <ion-icon name="star"></ion-icon>
                         </span>
-        if (champion_tier === 2 && champion_rarity === 0){
+        //one star
+        if (champion_tier === 1 && champion_rarity === 0){
+            stars = <span className={styleName.starGrey}>
+                        {starsOne}
+                    </span>
+        }else if (champion_tier === 1 && champion_rarity === 1){
+            stars = <span className={styleName.starGreen}>
+                        {starsOne}
+                    </span>
+        }else if (champion_tier === 1 && champion_rarity === 2){
+            stars = <span className={styleName.starBlue}>
+                        {starsOne}
+                    </span>
+        }else if (champion_tier === 1 && champion_rarity === 3){
+            stars = <span className={styleName.starPink}>
+                        {starsOne}
+                    </span>
+        }else if (champion_tier === 1 && champion_rarity === 4){
+            stars = <span className={styleName.starGold}>
+                        {starsOne}
+                    </span>
+        }else if (champion_tier === 1 && champion_rarity === 5){
+            stars = <span className={styleName.starGold}>
+                        {starsOne}
+                    </span>
+        }
+        //two stars
+        else if (champion_tier === 2 && champion_rarity === 0){
             stars = <span className={styleName.starGrey}>
                         {starsTwo}
                     </span>
@@ -37,7 +67,13 @@ export const StarsUnitsInfo = (champion_tier, champion_rarity) => {
             stars = <span className={styleName.starGold}>
                         {starsTwo}
                     </span>
-        }else if (champion_tier === 3 && champion_rarity === 0){
+        }else if (champion_tier === 2 && champion_rarity === 5){
+            stars = <span className={styleName.starGold}>
+                        {starsTwo}
+                    </span>
+        }
+        //three stars
+        else if (champion_tier === 3 && champion_rarity === 0){
             stars = <span className={styleName.starGrey}>
                         {starsThree}
                     </span>
@@ -54,6 +90,10 @@ export const StarsUnitsInfo = (champion_tier, champion_rarity) => {
                         {starsThree}
                     </span>
         }else if (champion_tier === 3 && champion_rarity === 4){
+            stars = <span className={styleName.starGold}>
+                        {starsThree}
+                    </span>
+        }else if (champion_tier === 3 && champion_rarity === 5){
             stars = <span className={styleName.starGold}>
                         {starsThree}
                     </span>

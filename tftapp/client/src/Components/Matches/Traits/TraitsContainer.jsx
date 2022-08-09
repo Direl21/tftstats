@@ -5,12 +5,12 @@ import { BackgroundIcon } from './Helper/BackgroundIcon';
 import consoleTool from '../../../utils/Tools/Console';
 
 //props from Riot API
-const TraitsContainer = (traitsMas) => {
+const TraitsContainer = (props) => {
     //getting data from array
-    let traitsList = traitsMas.traitsMas.map((character, index) => {
-        consoleTool(traitsMas.traitsMas)
+    let traitsList = props.traitsMas.map((character, index) => {
+        consoleTool(props.traitsMas)
         //sort data from largest to smallest by order, that is defined in the TraitsInfoSwitch
-        traitsMas.traitsMas.sort((a, b) => {
+        props.traitsMas.sort((a, b) => {
             return a.order - b.order;
         });
 
@@ -26,7 +26,8 @@ const TraitsContainer = (traitsMas) => {
         character.class_bg = background.class_bg;
         
         return (
-            <Traits key={index} name={character} />
+            <Traits key={index} name={character} sendErrorsOnServer={props.sendErrorsOnServer}
+            searchName={props.searchName} serverName={props.serverName}/>
         )
     })
     

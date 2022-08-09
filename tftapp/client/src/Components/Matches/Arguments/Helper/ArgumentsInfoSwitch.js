@@ -12,6 +12,7 @@ export const ArgumentsInfoSwitch = (name) => {
     let argumentDescription = "";
 
     switch (name) {
+        //Set6
         //Tier 1 (silver)
         case 'TFT6_Augment_CalculatedLoss':
             argumentName = "Calculated Loss";
@@ -851,9 +852,82 @@ export const ArgumentsInfoSwitch = (name) => {
             argumentName = "Golden Gifts II";
             argumentDescription = "Gain 2 golden and 3 gray loot orb(s).";
             break;
+        //Set7
+        //Tier 1 (silver)
+        
+        //Tier 2 (gold)
+        case 'TFT7_Augment_GuildEmblem':
+            argumentName = 'Guild Crest';
+            argumentDescription = 'Gain a Guild Emblem and a Twitch.';
+            break;
+        case 'TFT6_Augment_TradeSectorPlus':
+            argumentName = 'Trade Sector+';
+            argumentDescription = 'Gain a free Shop refresh each round. Gain 5 golds.';
+            break;
+        case 'TFT7_Augment_TempestEmblem':
+            argumentName = 'Tempest Crest';
+            argumentDescription = 'Gain a Tempest Emblem and a Qiyana.';
+            break;
+        case 'TFT7_Augment_AxiomArc2':
+            argumentName = 'Axiom Arc II';
+            argumentDescription = 'Your units gain 30 Mana on kill.';
+            break;
+        case 'TFT7_Augment_FirstAidKit2':
+            argumentName = 'First Aid Kit II';
+            argumentDescription = 'All healing and shielding on your units is increased by 35%.';
+            break;
+        case 'TFT7_Augment_DragonmancerInspire':
+            argumentName = 'Inspire';
+            argumentDescription = 'When the Dragonmancer Hero gets a takedown, champions that share a trait with the Dragonmancer Hero gain 70% Attack Speed for 3 seconds. Gain a Ashe.';
+            break;
+        case 'TFT7_Augment_MikaelsGift':
+            argumentName = 'Better Together';
+            argumentDescription = 'Aura items that buff your team have their effects increased by 33%. Gain a Locket of the Iron Solari.';
+            break;
+        case 'TFT7_Augment_RagewingEmblem':
+            argumentName = 'Ragewing Crest';
+            argumentDescription = 'Gain a Ragewing Emblem and a Kayn.';
+            break;
+        case 'TFT7_Augment_GuildGearUpgrades':
+            argumentName = 'Gear Upgrades';
+            argumentDescription = 'Guild champions holding an item gain 25 Armor and another 200% of their Guild bonus. Gain a Twitch.';
+            break;
+        case 'TFT7_Augment_Bloodlust1':
+            argumentName = 'Combat Training I';
+            argumentDescription = 'Your Champions permanently gain 1 Attack Damage every time they kill an enemy unit. Champions start with 8 Attack Damage';
+            break;
+        case 'TFT7_Augment_ClutteredMind':
+            argumentName = 'Cluttered Mind';
+            argumentDescription = 'If your bench is full at the end of a round, gain 4 experience points.';
+            break;
+        case 'TFT7_Augment_UrfsGrabBag1':
+            argumentName = "Urf's Grab Bag I";
+            argumentDescription = 'Gain 1 Spatula and 1 random item component.';
+            break;
+        case 'TFT7_Augment_MageEmblem':
+            argumentName = "Mage Crest";
+            argumentDescription = 'Gain a Mage Emblem and a Vladimir.';
+            break;
+        //Tier 3 (chroma)
+        case 'TFT7_Augment_LivingForge':
+            argumentName = 'Living Forge';
+            argumentDescription = 'Gain a random Ornn item now and after every 10 player combats.';
+            break;
+        case 'TFT7_Augment_TomeOfTraits2':
+            argumentName = 'Ancient Archives II';
+            argumentDescription = 'Gain 2 Tome of Traits.';
+            break;
+        case 'TFT7_Augment_BruiserEmblem2':
+            argumentName = 'Bruiser Crown';
+            argumentDescription = 'Gain a Bruiser Emblem, a Redemption, and an Sylas.';
+            break;
+        case 'TFT7_Augment_GuildEmblem2':
+            argumentName = 'Guild Crown';
+            argumentDescription = 'Gain a Guild Emblem, a Giant Slayer and a Ryze.';
+            break;
         default:
             consoleTool("error")
-            break
+            break;
     }
 
     return {argumentName: argumentName, argumentDescription: argumentDescription}

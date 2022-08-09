@@ -344,6 +344,79 @@ export const ItemNameSwitch = (item) => {
             case 2099:
                 item_name = "Rascal's Gloves";
                 break;
+            //Set7
+            case 2300:
+                item_name = "Scalescorn Emblem";
+                break;
+            case 2301:
+                item_name = "Cannoneer Emblem";
+                break;
+            case 2302:
+                item_name = "Shimmerscale Emblem";
+                break;
+            case 2303:
+                item_name = "Whispers Emblem";
+                break;
+            case 2305:
+                item_name = "Bruiser Emblem";
+                break;
+            case 2307:
+                item_name = "Cavalier Emblem";
+                break;
+            case 2308:
+                item_name = "Warrior Emblem";
+                break;
+            case 2310:
+                item_name = "Tempest Emblem";
+                break;
+            case 2311:
+                item_name = "Mage Emblem";
+                break;
+            case 2312:
+                item_name = "Mystic Emblem";
+                break;
+            case 2313:
+                item_name = "Swiftshot Emblem";
+                break;
+            case 2314:
+                item_name = "Mirage Emblem";
+                break;
+            case 2315:
+                item_name = "Ragewing Emblem";
+                break;
+            case 2316:
+                item_name = "Revel Emblem";
+                break;
+            case 2317:
+                item_name = "Evoker Emblem";
+                break;
+            case 2318:
+                item_name = "Guild Emblem";
+                break;
+            case 2323:
+                item_name = "Guardian Emblem";
+                break;
+            case 2324:
+                item_name = "Jade Emblem";
+                break;
+            case 2325:
+                item_name = "Assassin Emblem";
+                break;
+            case 2425:
+                item_name = "Legend Emblem";
+                break;
+            case 2426:
+                item_name = "Dragonmancer Emblem";
+                break;
+            case 3006:
+                item_name = "Diamond Hands";
+                break;
+            case 3001:
+                item_name = "Draven's Axe";
+                break;
+            case 3002:
+                item_name = 'Needlessly Big Gem';
+                break;
             default:
                 consoleTool('error',1)
                 break;

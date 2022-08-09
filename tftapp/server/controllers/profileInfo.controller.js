@@ -31,7 +31,7 @@ export const riotApiRequest =  (req, res) => {
                     // create a document to insert
                     let docData = doc(request.playerData, request.rankData, request.matchData, serverValue);
                     await getMatchesData(request.matchData, docData);
-                    
+                    console.log('DATAAAAA', docData);
                     const addProfile = new Profile(docData, true);
                     await addProfile.save();
                     res.json(addProfile);
@@ -50,7 +50,8 @@ export const riotApiRequest =  (req, res) => {
                 if (dataFromDbFormat <= dataFormat) {
                     try{
                         let request = await apiRequest(playerName, serverValue);
-                        updateData(playerName, serverValue, request);
+                        let oldMatchesDateTime = result.oneMatchData[0].info.gameDatetime;
+                        updateData(playerName, serverValue, request, oldMatchesDateTime);
                         res.json(result);
                         console.log("UPDATED_RESULT:", result)
                     } catch (e) {
@@ -59,6 +60,7 @@ export const riotApiRequest =  (req, res) => {
                 } else {
                     res.json(result);
                     console.log("RESULT:", result)
+                    console.log('ONEMATCHDATA:', result.oneMatchData[0].info.gameDatetime)
                 }
                 
             }

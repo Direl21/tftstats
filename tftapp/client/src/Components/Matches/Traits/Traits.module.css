@@ -22,17 +22,17 @@
 }
 
 .bronze {
-    background-image: url(../../../assets/traits/bg/bronze.svg);
+    background-image: url(../../../assets/bg/bronze.svg);
 }
 .silver {
-    background-image: url(../../../assets/traits/bg/silver.svg);
+    background-image: url(../../../assets/bg/silver.svg);
 }
 .gold {
-    background-image: url(../../../assets/traits/bg/gold.svg);
+    background-image: url(../../../assets/bg/gold.svg);
 }
 .chroma {
-    background-image: url(../../../assets/traits/bg/chromatic.svg);
+    background-image: url(../../../assets/bg/chromatic.svg);
 }
 .none {
-    background-image: url(../../../assets/traits/bg/chromatic.svg);
+    background-image: url(../../../assets/bg/chromatic.svg);
 }

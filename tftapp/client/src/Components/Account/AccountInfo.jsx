@@ -5,14 +5,31 @@ import { RankIconSwitch } from './Helper/RankIconSwitch';
 
 //This component renders information about the account
 //Receives data from riot api (searchInfo, rankInfo) 
+
 const AccauntInfo = (props) => {
+    
     if (props.searchInfo === null || props.rankInfo === null) {
         return <div></div>
     }
+    
     return (
         <div className={styleName.profileInfo}>
+            
             <div className={styleName.profileIconBox}>
-              <img className={styleName.profileIcon} alt='' src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${props.searchInfo.profileIconId}.png`}/>
+            <div>
+                <img className={styleName.profileIcon} alt='' 
+                    src={`https://ddragon.leagueoflegends.com/cdn/12.5.1/img/profileicon/${props.searchInfo.profileIconId}.png`}
+                    onError={({ currentTarget }) => {
+                        currentTarget.onerror = null; // prevents looping
+                        console.log("currentTarget", props.serverName);
+                        currentTarget.src=require(`../../assets/penguin.png`);
+                        
+                        props.sendErrorsOnServer(props.searchName, props.serverName, 'profileIcon', props.searchInfo.profileIconId);           
+                        
+                    }}
+                />
+            </div>
+              
               <div className={styleName.profileLvl}>{props.searchInfo.summonerLevel}</div>
             </div>
             <div className={styleName.profileDetail}>
